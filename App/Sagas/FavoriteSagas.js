@@ -12,9 +12,9 @@ export function * addFavorite ({movie}) {
   try {
     const favorite = yield select(FavoriteSelectors.favorite)
     const data = [...favorite.data]
-    const indexOf = data.indexOf( mov => mov.id == movie.id)
+    const indexOf = data.findIndex( mov => mov.id == movie.id)
 
-    if (indexOf < 1) {
+    if (indexOf < 0) {
       data.push(movie)
       yield put(FavoriteActions.addFavoriteSuccess(data))
     } else {
@@ -31,10 +31,10 @@ export function * removeFavorite ({movieId}) {
   try {
     const favorite = yield select(FavoriteSelectors.favorite)
     const data = [...favorite.data]
-    const indexOf = data.indexOf( mov => mov.id == movieId)
+    const indexOf = data.findIndex( mov => (mov.id === movieId))
 
-    if (indexOf > 1) {
-      data.splce(indexOf, 1)
+    if (indexOf > -1) {
+      data.splice(indexOf, 1)
       yield put(FavoriteActions.removeFavoriteSuccess(data))
     } else {
       yield put(FavoriteActions.removeFavoriteFailure('Remove Favorite Failure'))

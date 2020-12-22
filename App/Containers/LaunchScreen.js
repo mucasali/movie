@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
 
-import { Images } from '../Themes'
-
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
@@ -16,7 +14,9 @@ export default class LaunchScreen extends Component {
     return (
       <View style={styles.mainContainer}>
         <View style={styles.centered}>
-          <Image source={Images.iconLogoWord} style={styles.logo} />
+          <Text style={styles.text}>
+            UXBERT Usability Lab, Project (Muchamad Sahli)
+          </Text>
         </View>
       </View>
     )

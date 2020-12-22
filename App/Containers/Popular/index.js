@@ -11,6 +11,7 @@ import {ImageReplacer, CustomFlatList} from '../../Components'
 import {BASE_IMG, BASE_SHARE_URL} from '../../Constans/Data'
 import Styles from '../Styles/Movie'
 import MovieActions from '../../Redux/MovieRedux'
+import BtnFavorite from '../Favorite/Button'
 
 import Data from './data'
 
@@ -51,9 +52,11 @@ class PopularScreen extends Component {
             </View>
           </View>
           <View style={Styles.contentText}>
-            <TouchableOpacity style={Styles.btnHeart}>
-              <Icon name="heart" size={17} color="red"/>
-            </TouchableOpacity>
+            <BtnFavorite
+              movie={item}
+              styleContainer={Styles.btnHeart}
+              size={20}
+            />
             <Text style={Styles.textTitle}>{title}</Text>
             <Text style={Styles.textDate}>{releaseDate.format('MMM DD, YYYY')}</Text>
           </View>
@@ -83,7 +86,7 @@ class PopularScreen extends Component {
           <CustomFlatList
             data= { data }
             renderItem= { this.renderItem.bind(this) }
-            numColumns={3}
+            numColumns={2}
             refreshing={ fetching }
             onRefresh={() => this.loadData(true)}
             keyExtractor={(item, index) => index.toString()}

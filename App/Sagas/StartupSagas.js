@@ -8,6 +8,5 @@ import NavigationServices from '../Services/NavigationServices'
 
 // process STARTUP actions
 export function * startup (action) {
-  // NavigationServices.navigate('ChatScreen')
-  NavigationServices.navigate('MainScreen')
+  NavigationServices.replace('MainScreen')
 }

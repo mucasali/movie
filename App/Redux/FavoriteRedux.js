@@ -35,7 +35,7 @@ export const INITIAL_STATE = Immutable({
 /* ------------- Selectors ------------- */
 
 export const FavoriteSelectors = {
-  favorite: state => state.movie.favorite,
+  favorite: state => state.favorite.favorite,
 }
 
 /* ------------- Reducers ------------- */

@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import {connect} from 'react-redux'
 import moment from 'moment'
 
+import FavoriteActions from '../../Redux/FavoriteRedux'
 import {ImageReplacer, CustomFlatList, TextLimiter} from '../../Components'
 import {BASE_IMG, BASE_SHARE_URL} from '../../Constans/Data'
 import Styles from '../Styles/Movie'
@@ -72,10 +73,11 @@ class FavoriteScreen extends Component {
             <TouchableOpacity
               style={Styles.btnDeleteHeart}
               onPress={() => {
+                this.props.removeFavorite(id)
               }}
             >
               <Icon name="heart-outline" size={15} color={'#FFF'}/>
-              <Text style={Styles.textShare}>Delete Favorite</Text>
+              <Text style={Styles.textShare}>Remove Favorite</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
@@ -95,7 +97,6 @@ class FavoriteScreen extends Component {
           <CustomFlatList
             data= { data }
             renderItem= { this.renderItem.bind(this) }
-            numColumns={3}
             refreshing={ fetching }
             onRefresh={() => this.loadData(true)}
             keyExtractor={(item, index) => index.toString()}
@@ -124,7 +125,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    removeFavorite: movieId =>
+      dispatch(FavoriteActions.removeFavoriteRequest(movieId))
   }
 }
 

@@ -8,7 +8,10 @@ export function * getPopular (api, {reset}) {
 
   try {
     const popular = yield select(MovieSelectors.popular)
-    const res = yield call(api.getPopular, {"api_key": API_KEY, page: popular.page})
+    const res = yield call(api.getPopular, {
+      "api_key": API_KEY,
+      page: popular.page
+    })
     const { ok, data } = res
     console.tron.log('getMovie.res ', res)
     if (ok) {

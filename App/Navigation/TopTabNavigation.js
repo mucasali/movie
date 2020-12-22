@@ -2,7 +2,6 @@ import React from 'react'
 import { Text, Image } from 'react-native'
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
-import LinearGradient from 'react-native-linear-gradient';
 
 import PopularScreen from '../Containers/Popular'
 import FavoriteScreen from '../Containers/Favorite'

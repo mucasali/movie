@@ -14,8 +14,6 @@ target 'src' do
 
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
-  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
-
   target 'srcTests' do
     inherit! :complete
     # Pods for testing

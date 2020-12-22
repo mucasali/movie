@@ -15,7 +15,6 @@ const PrimaryNav = createStackNavigator({
   LaunchScreen: { screen: LaunchScreen },
   MainScreen: { screen: TopTabNavigation,
     navigationOptions: {
-      headerLeft: null,
       headerTitle: 'UXBERT Movie',
       headerStyle: {
         backgroundColor: '#fff',

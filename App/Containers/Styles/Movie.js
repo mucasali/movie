@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native'
 import { Colors, Fonts, ApplicationStyles } from '../../Themes/'
 import Scale from '../../Transforms/Scale'
 
-const HEIGHT_POSTER = Scale(180)
+const HEIGHT_POSTER = Scale(250)
 const SIZE_RATING = Scale(40)
 const SIZE_SHARE = Scale(25)
-const BTN_HEART = Scale(25)
+const BTN_HEART = Scale(30)
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -16,6 +16,7 @@ export default StyleSheet.create({
   contentItem: {
     flex: 1,
     margin: 5,
+    backgroundColor: 'white',
     borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -31,6 +32,7 @@ export default StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     elevation: 2,
+    backgroundColor: 'white',
   },
   contentText: {
     flex: 1,
@@ -87,7 +89,7 @@ export default StyleSheet.create({
   },
   btnHeart: {
     position: 'absolute',
-    top: -15,
+    top: -20,
     right: 2,
     width: BTN_HEART,
     height: BTN_HEART,

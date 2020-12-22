@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Metrics, ApplicationStyles } from '../../Themes/'
+import { Metrics, ApplicationStyles, Fonts } from '../../Themes/'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -17,5 +17,11 @@ export default StyleSheet.create({
     flex:1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    fontFamily: Fonts.type.bold,
+    color: 'black'
   }
 })
